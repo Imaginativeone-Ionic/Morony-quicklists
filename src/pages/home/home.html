@@ -2,8 +2,12 @@
   <ion-navbar color="secondary">
     <ion-title>
         <img src="assets/images/logo.png" />
-      Doug's App
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addChecklist()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -16,21 +20,46 @@
   <h1>Neither Dubhe nor Berto like candy that is disgusting.</h1>
 
   <ion-list>
-    <ion-item>
-      A
-    </ion-item>
-    <ion-item>
-      B
-    </ion-item>
-    <ion-item>
-      C
-    </ion-item>
-    <ion-item>
-      D
-    </ion-item>
-    <ion-item>
-      E
-    </ion-item>
+    <ion-item-sliding #item>
+      <ion-item>
+        Title Goes Here
+      </ion-item>
+      <!-- <ion-item-options side="left"> -->
+        <!-- <button ion-button (click)="favorite(item)">Favorite</button> -->
+        <!-- <button ion-button color="danger" (click)="share(item)">Share</button> -->
+        <!-- <ion-icon name='clipboard'></ion-icon> Edit -->
+      <!-- </ion-item-options> -->
+
+      <ion-item-options side="right">
+        <button ion-button color="light" (click)="unread(item)">
+          <ion-icon name="clipboard"></ion-icon>Edit
+        </button>
+        <button ion-button color="danger" (click)="archive(item)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        A
+      </ion-item>
+      <ion-item>
+        B
+      </ion-item>
+      <ion-item>
+        C
+      </ion-item>
+      <ion-item>
+        D
+      </ion-item>
+      <ion-item>
+        E
+      </ion-item>
+    </ion-item-sliding>
   </ion-list>
 
 </ion-content>
