@@ -61,11 +61,62 @@ export class HomePage {
 
   }
 
-  renameChecklist(checklist): void {}
+  renameChecklist(checklist): void {
 
-  viewChecklist(checklist): void {}
+    let prompt = this.alertCtrl.create({
 
-  removeChecklist(checklist): void {}
+      title: 'Rename Checklist',
+      message: 'Enter the new name of this checklist below:',
+      inputs: [{
+        name: 'name'
+      }],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+
+            let index = this.checklists.indexOf(checklist);
+
+            if (index > -1) {
+
+              this.checklists[index].setTitle(data.name);
+
+            }
+          }
+        }
+      ]
+    });
+
+    prompt.present();
+
+  }
+
+  viewChecklist(checklist): void {
+
+    this.nav.push(ChecklistPage, {
+
+      checklist: checklist
+
+    });
+
+  }
+
+  removeChecklist(checklist): void {
+
+    let index = this.checklists.indexOf(checklist);
+
+    if (index > -1) {
+
+      this.checklists.splice(index, 1);
+
+      this.save();
+
+    }
+
+  }
 
   save(): void {}
 
