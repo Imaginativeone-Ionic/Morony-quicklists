@@ -17,7 +17,7 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
 
-  <h1>Neither Dubhe nor Berto like candy that is disgusting.</h1>
+  <h1>Neither Dubhe nor Berto like disgusting-tasting candy.</h1>
 
   <ion-list>
     <ion-item-sliding #item>
@@ -31,8 +31,8 @@
       <!-- </ion-item-options> -->
 
       <ion-item-options side="right">
-        <button ion-button color="light" (click)="unread(item)">
-          <ion-icon name="clipboard"></ion-icon>Edit
+        <button ion-button icon-only color="light" (click)="unread(item)">
+          <ion-icon name="clipboard"></ion-icon>Edit<!-- The icon still appears :-( -->
         </button>
         <button ion-button color="danger" (click)="archive(item)">
           <ion-icon name="trash"></ion-icon>
