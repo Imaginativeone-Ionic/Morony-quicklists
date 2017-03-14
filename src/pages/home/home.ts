@@ -1,6 +1,6 @@
 import { Component }      from '@angular/core';
 import { NavController, AlertController, Platform } from 'ionic-angular';
-import { ChecklistPage }  from '..checklist/checklist';
+import { ChecklistPage }  from '../checklist/checklist';
 import { ChecklistModel } from '../../models/checklist-model';
 import { Data }           from '../../providers/data';
 import { Keyboard }       from 'ionic-native';
