@@ -22,12 +22,40 @@ export class ChecklistPage {
 
   }
 
-  // Current Development
-  addItem():        void {}
+  addItem():        void {
 
+    let prompt = this.alertCtrl.create({
+
+      title: 'Add Item',
+      message: 'Enter the name of the task for this checklist below:',
+      inputs: [
+        {
+          name: 'name'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+
+            this.checklist.addItem(data.name);
+
+          }
+        }
+      ]
+    });
+
+    prompt.present();
+
+  }
 
   toggleItem(item): void {}
   removeItem(item): void {}
+  
+  // Current Development
   renameItem(item): void {}
   uncheckItems():   void {}
 
