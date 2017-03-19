@@ -53,9 +53,10 @@ export class ChecklistPage {
   }
 
   toggleItem(item): void {}
-  removeItem(item): void {}
   
   // Current Development
+  removeItem(item): void {}
+  
   renameItem(item): void {
 
     let prompt = this.alertCtrl.create({
