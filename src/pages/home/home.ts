@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public nav: NavController, public dataService: Data, public alertCtrl: AlertController,
       public platform: Platform) {
     
-        alert("Home Page Loaded");
+        // alert("Home Page Loaded");
 
   }
   

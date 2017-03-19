@@ -22,7 +22,7 @@ export class ChecklistPage {
 
   }
 
-  addItem():        void {
+  addItem(): void {
 
     let prompt = this.alertCtrl.create({
 
@@ -56,7 +56,34 @@ export class ChecklistPage {
   removeItem(item): void {}
   
   // Current Development
-  renameItem(item): void {}
+  renameItem(item): void {
+
+    let prompt = this.alertCtrl.create({
+
+      title: 'Rename Item',
+      message: 'Enter the new name of the task for this checklist below:',
+      inputs: [
+        {
+          name: 'name'
+        }
+      ],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Save',
+          handler: data => {
+
+            this.checklist.renameItem(item, data.name);
+
+          }
+        }
+      ]
+    });
+
+    prompt.present();
+
+  }
+
   uncheckItems():   void {}
 
   ionViewDidLoad() {
