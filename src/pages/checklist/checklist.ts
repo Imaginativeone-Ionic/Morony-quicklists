@@ -52,7 +52,6 @@ export class ChecklistPage {
 
   }
 
-  // Current Development
   toggleItem(item): void {
 
     this.checklist.toggleItem(item);
@@ -93,6 +92,7 @@ export class ChecklistPage {
 
   }
 
+  // Current Development
   uncheckItems():   void {}
 
   ionViewDidLoad() {
