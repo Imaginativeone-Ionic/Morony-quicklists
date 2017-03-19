@@ -55,7 +55,11 @@ export class ChecklistPage {
   toggleItem(item): void {}
   
   // Current Development
-  removeItem(item): void {}
+  removeItem(item): void {
+
+    this.checklist.removeItem(item);
+
+  }
   
   renameItem(item): void {
 
