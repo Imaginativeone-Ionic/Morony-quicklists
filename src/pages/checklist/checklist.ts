@@ -52,9 +52,9 @@ export class ChecklistPage {
 
   }
 
+  // Current Development
   toggleItem(item): void {}
   
-  // Current Development
   removeItem(item): void {
 
     this.checklist.removeItem(item);
