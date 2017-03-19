@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 /*
   Generated class for the Checklist page.
@@ -11,9 +11,25 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-checklist',
   templateUrl: 'checklist.html'
 })
+
 export class ChecklistPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  checklist: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+
+    this.checklist = this.navParams.get('checklist');
+
+  }
+
+  // Current Development
+  addItem():        void {}
+
+
+  toggleItem(item): void {}
+  removeItem(item): void {}
+  renameItem(item): void {}
+  uncheckItems():   void {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChecklistPage');

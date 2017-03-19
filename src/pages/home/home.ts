@@ -9,6 +9,7 @@ import { Keyboard }       from 'ionic-native';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   checklists: ChecklistModel[] = [];
@@ -16,11 +17,13 @@ export class HomePage {
   constructor(public nav: NavController, public dataService: Data, public alertCtrl: AlertController,
       public platform: Platform) {
     
+        alert("Home Page Loaded");
+
   }
   
   ionViewDidLoad() {}
 
-  addCheckList(): void {
+  addChecklist(): void {
 
     let prompt = this.alertCtrl.create({
 

@@ -19,11 +19,26 @@
 
   <h1>Neither Dubhe nor Berto like disgusting-tasting candy.</h1>
 
+  Beginning of List
   <ion-list no-lines>
-    <ion-item-sliding>
-      <button ion-item>Test Item</button>
+    <ion-item-sliding *ngFor="let checklist of checklists">
+      <button ion-item (click)="viewChecklist(checklist)">
+        {{ checklist.title }} Where are my items?
+        <span>{{ checklist.items.length }}</span>
+      </button>
+      <ion-item-options>
+        <button ion-button icon-only color="light"
+        (click)="renameChecklist(checklist)">
+          <ion-icon name="clipboard"></ion-icon>
+        </button>
+        <button ion-button icon-only color="danger"
+        (click)="removeChecklist(checklist)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  End of list
 
   <ion-list>
     <ion-item-sliding #item>
