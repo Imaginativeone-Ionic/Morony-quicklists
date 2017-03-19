@@ -93,7 +93,19 @@ export class ChecklistPage {
   }
 
   // Current Development
-  uncheckItems():   void {}
+  uncheckItems(): void {
+
+    this.checklist.items.forEach((item) => {
+
+      if(item.checked) {
+
+        this.checklist.toggleItem(item);
+
+      }
+
+    });
+
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChecklistPage');
