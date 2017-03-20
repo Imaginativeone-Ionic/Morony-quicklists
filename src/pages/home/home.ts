@@ -21,7 +21,44 @@ export class HomePage {
 
   }
   
-  ionViewDidLoad() {}
+  // Current Development
+  ionViewDidLoad() {
+
+    this.platform.ready().then(() => {
+
+      this.dataService.getData().then((checklists) => {
+
+        let savedChecklists: any = false;
+
+        if(typeof(checklists) != "undefined") {
+
+          savedChecklists = JSON.parse(checklists);
+
+        }
+
+        if(savedChecklists) {
+
+          savedChecklists.forEach((savedChecklist) => {
+
+            let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items);
+
+            this.checklists.push(loadChecklist);
+
+            loadChecklist.checkListUpdates().subscribe(update => {
+
+              this.save();
+
+            });
+
+          });
+
+        }
+
+      });
+
+    });
+
+  }
 
   addChecklist(): void {
 
@@ -121,6 +158,11 @@ export class HomePage {
 
   }
 
-  save(): void {}
+  save(): void {
+
+    Keyboard.close();
+    this.dataService.save(this.checklists); // the save() method from export class Data in data.ts
+
+  }
 
 }
